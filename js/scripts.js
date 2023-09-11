@@ -1,19 +1,19 @@
 'use strict';
 
-document.addEventListener('DMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+    const inputItems = document.querySelectorAll('.input');
+    const listElement = document.createElement('ul');
     console.log('Content Loaded');
     const myList = document.querySelector('#myList');
 
-
     generateList.addEventListener('click', function () {
-        const inputItems = document.querySelector('input');
-        const listElement = document.createElement('ul');
 
-        inputItems.forEach(function (inputItem) {
+        inputItems.forEach(function (inputItems) {
             const listItem = document.createElement('li');
-            listItem.innerText = inputItem.value;
-            listElements.append(listItem);
+            listItem.innerText = inputItems.value;
+            listElement.append(listItem);
+            console.log(listItem);
         });
-
+        myList.appendChild(listElement);
     });
 });
